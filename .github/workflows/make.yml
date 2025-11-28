@@ -16,9 +16,13 @@ jobs:
       matrix:
         include:
           - os: macos-latest
-            label: macOS
+            label: macOS-x64
+            build_cmd: pnpm make:x64
+            artifact_name: make-macOS-x64
           - os: windows-latest
             label: Windows
+            build_cmd: pnpm run make
+            artifact_name: make-Windows
     env:
       CI: true
 
@@ -41,11 +45,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run make
-        run: pnpm run make
+        run: ${{ matrix.build_cmd }}
 
       - name: Upload make artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: make-${{ matrix.label }}
+          name: ${{ matrix.artifact_name }}
           path: apps/electron/out/make
           if-no-files-found: error
