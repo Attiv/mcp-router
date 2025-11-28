@@ -154,7 +154,7 @@ const WorkspaceManagement: React.FC = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={(e) => {
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         e.stopPropagation();
                         handleEditWorkspace(workspace);
                       }}
@@ -164,7 +164,7 @@ const WorkspaceManagement: React.FC = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={(e) => {
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         e.stopPropagation();
                         setDeletingWorkspace(workspace);
                       }}

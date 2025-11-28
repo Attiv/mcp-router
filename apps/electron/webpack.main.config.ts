@@ -24,6 +24,10 @@ export const mainConfig: Configuration = {
         __dirname,
         "../../packages/shared/src",
       ),
+      "@mcp_router/remote-api-types": path.resolve(
+        __dirname,
+        "../../packages/remote-api-types/src",
+      ),
       "@mcp_router/platform-api": path.resolve(
         __dirname,
         "../../packages/platform-api/src",

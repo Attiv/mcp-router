@@ -75,3 +75,7 @@
 ## 📝 许可证
 
 本项目采用 Sustainable Use License 授权，详情请参阅 [LICENSE.md](LICENSE.md)。
+
+## 运行前准备
+`xattr -cr "/Applications/MCP Router.app"`
+`codesign --force --deep --sign - "/Applications/MCP Router.app"`

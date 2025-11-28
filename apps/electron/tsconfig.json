@@ -5,6 +5,7 @@
     "module": "commonjs",
     "baseUrl": ".",
     "outDir": "dist",
+	"rootDir": ".",
     "jsx": "react-jsx",
     "composite": true,
     "esModuleInterop": true,
@@ -15,12 +16,31 @@
       "@/*": ["./src/*"],
       "@mcp_router/shared": ["../../packages/shared/src"],
       "@mcp_router/ui": ["../../packages/ui/src"],
-      "@mcp_router/ui/*": ["../../packages/ui/src/*"]
+	"@mcp_router/ui/*": [
+		"../../packages/ui/src/*"
+	],
+	"@mcp_router/remote-api-types": [
+		"../../packages/remote-api-types/src"
+	],
+	"@mcp_router/remote-api-types/*": [
+		"../../packages/remote-api-types/src/*"
+	]
     }
   },
-  "include": ["src/**/*", "src/**/*.json", "../../packages/shared/src/types/svg.d.ts"],
+"include": [
+	"src/**/*",
+	"src/**/*.json",
+	"../../packages/shared/src/**/*",
+	"../../packages/ui/src/**/*",
+	"../../packages/remote-api-types/src/**/*"
+],
   "references": [
     { "path": "../../packages/shared" },
-    { "path": "../../packages/ui" }
+	{
+		"path": "../../packages/ui"
+	},
+	{
+		"path": "../../packages/remote-api-types"
+	}
   ]
 }

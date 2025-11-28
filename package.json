@@ -16,6 +16,7 @@
     "build": "turbo run build",
     "publish": "turbo run publish --filter=@mcp_router/electron",
     "make": "turbo run make",
+    "make:x64": "pnpm --filter @mcp_router/electron run make:x64",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.mjs,.cjs --fix",
     "typecheck": "turbo run typecheck",
     "knip": "knip",

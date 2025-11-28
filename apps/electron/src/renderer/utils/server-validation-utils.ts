@@ -1,4 +1,5 @@
 import { MCPServer } from "@mcp_router/shared";
+import type { MCPInputParam } from "@mcp_router/shared";
 
 /**
  * Check if a server has unset required input parameters
@@ -7,12 +8,16 @@ import { MCPServer } from "@mcp_router/shared";
  */
 export function hasUnsetRequiredParams(server: MCPServer): boolean {
   // If no inputParams, nothing to check
-  if (!server.inputParams) {
+  const inputParams = server.inputParams;
+  if (!inputParams) {
     return false;
   }
 
   // Check each input parameter
-  for (const [paramKey, paramConfig] of Object.entries(server.inputParams)) {
+  for (const [paramKey, paramConfig] of Object.entries(inputParams) as [
+    string,
+    MCPInputParam,
+  ][]) {
     // If the parameter is required
     if (paramConfig.required) {
       // Check if it's set in env
